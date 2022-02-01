@@ -46,39 +46,6 @@ const dishes = [
   },
 ];
 
-const coktails = [
-  {
-    name: "Cosmopolitan",
-    alcohol: true,
-    rating: 7,
-  },
-  {
-    name: "Margarita",
-    alcohol: true,
-    rating: 4,
-  },
-  {
-    name: "Martini",
-    alcohol: true,
-    rating: 9,
-  },
-  {
-    name: "Mojito",
-    alcohol: true,
-    rating: 10,
-  },
-  {
-    name: "Cinderella",
-    alcohol: false,
-    rating: 2,
-  },
-  {
-    name: "Pussyfoot",
-    alcohol: false,
-    rating: 5,
-  },
-];
-
 // console.log(dishes);
 // console.table(dishes);
 
@@ -116,9 +83,26 @@ const cart = {
   add(product) {
     this.items.push(product);
   },
-  remove(productName) {},
-  clear() {},
-  countTotalPrice() {},
+  remove(productName) {
+    for (const product of this.items) {
+      if (product.name === productName) {
+        const indexOfProduct = this.items.indexOf(product);
+        this.items.splice(indexOfProduct, 1);
+      }
+    }
+    this.getItems();
+  },
+  clear() {
+    this.items = [];
+  },
+  countTotalPrice(allProducts) {
+    let totalPrice = 0;
+
+    for (const product of allProducts) {
+      totalPrice += product.price;
+    }
+    return totalPrice;
+  },
   increaseQuantity(productName) {},
   decreaseQuantity(productName) {},
 };
@@ -129,6 +113,52 @@ cart.add({ name: "apple", price: 50 });
 cart.add({ name: "grape", price: 60 });
 cart.add({ name: "lemon", price: 60 });
 cart.add({ name: "strawberry", price: 110 });
-cart.remove("apple");
-
+cart.add({ name: "pear", price: 30 });
+cart.remove("strawberry");
 console.log(cart.getItems());
+// cart.clear();
+// console.log(cart.countTotalPrice(cart.items));
+
+// console.log(cart.items);
+// console.log(cart.clear());
+
+// const coktails = [
+//   {
+//     name: "Cosmopolitan",
+//     alcohol: true,
+//     rating: 7,
+//   },
+//   {
+//     name: "Margarita",
+//     alcohol: true,
+//     rating: 4,
+//   },
+//   {
+//     name: "Martini",
+//     alcohol: true,
+//     rating: 9,
+//   },
+//   {
+//     name: "Mojito",
+//     alcohol: true,
+//     rating: 10,
+//   },
+//   {
+//     name: "Cinderella",
+//     alcohol: false,
+//     rating: 2,
+//   },
+//   {
+//     name: "Pussyfoot",
+//     alcohol: false,
+//     rating: 5,
+//   },
+// ];
+
+// const first = {
+//   name: "Red Marry",
+//   alcohol: true,
+//   rating: 5,
+// };
+
+// console.log(coktails[0]);
