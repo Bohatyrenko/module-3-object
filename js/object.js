@@ -1,50 +1,50 @@
-const dishes = [
-  {
-    name: "Chicken and Waffles",
-    mealTime: "Breakfast",
-    rating: 3,
-  },
-  {
-    name: "Avocado Toast",
-    mealTime: "Breakfast",
-    rating: 4,
-  },
-  {
-    name: "Breakfast Sandwich",
-    mealTime: "Breakfast",
-    rating: 5,
-  },
-  {
-    name: "Ham sandwich",
-    mealTime: "Lunch",
-    rating: 7,
-  },
-  {
-    name: "Superfood salad",
-    mealTime: "Lunch",
-    rating: 3,
-  },
-  {
-    name: "Spicy chicken wrap",
-    mealTime: "Lunch",
-    rating: 9,
-  },
-  {
-    name: "Pizza",
-    mealTime: "Dinner",
-    rating: 9,
-  },
-  {
-    name: "Kebab",
-    mealTime: "Dinner",
-    rating: 8,
-  },
-  {
-    name: "Steak",
-    mealTime: "Dinner",
-    rating: 10,
-  },
-];
+// const dishes = [
+//   {
+//     name: "Chicken and Waffles",
+//     mealTime: "Breakfast",
+//     rating: 3,
+//   },
+//   {
+//     name: "Avocado Toast",
+//     mealTime: "Breakfast",
+//     rating: 4,
+//   },
+//   {
+//     name: "Breakfast Sandwich",
+//     mealTime: "Breakfast",
+//     rating: 5,
+//   },
+//   {
+//     name: "Ham sandwich",
+//     mealTime: "Lunch",
+//     rating: 7,
+//   },
+//   {
+//     name: "Superfood salad",
+//     mealTime: "Lunch",
+//     rating: 3,
+//   },
+//   {
+//     name: "Spicy chicken wrap",
+//     mealTime: "Lunch",
+//     rating: 9,
+//   },
+//   {
+//     name: "Pizza",
+//     mealTime: "Dinner",
+//     rating: 9,
+//   },
+//   {
+//     name: "Kebab",
+//     mealTime: "Dinner",
+//     rating: 8,
+//   },
+//   {
+//     name: "Steak",
+//     mealTime: "Dinner",
+//     rating: 10,
+//   },
+// ];
 
 // console.log(dishes);
 // console.table(dishes);
@@ -75,47 +75,47 @@ const dishes = [
  * { name: 'strawberry', price: 110 }
  */
 
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    this.items.push(product);
-  },
-  remove(productName) {
-    for (const product of this.items) {
-      if (product.name === productName) {
-        const indexOfProduct = this.items.indexOf(product);
-        this.items.splice(indexOfProduct, 1);
-      }
-    }
-    this.getItems();
-  },
-  clear() {
-    this.items = [];
-  },
-  countTotalPrice(allProducts) {
-    let totalPrice = 0;
+// const cart = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
+//     this.items.push(product);
+//   },
+//   remove(productName) {
+//     for (const product of this.items) {
+//       if (product.name === productName) {
+//         const indexOfProduct = this.items.indexOf(product);
+//         this.items.splice(indexOfProduct, 1);
+//       }
+//     }
+//     this.getItems();
+//   },
+//   clear() {
+//     this.items = [];
+//   },
+//   countTotalPrice(allProducts) {
+//     let totalPrice = 0;
 
-    for (const product of allProducts) {
-      totalPrice += product.price;
-    }
-    return totalPrice;
-  },
-  increaseQuantity(productName) {},
-  decreaseQuantity(productName) {},
-};
+//     for (const product of allProducts) {
+//       totalPrice += product.price;
+//     }
+//     return totalPrice;
+//   },
+//   increaseQuantity(productName) {},
+//   decreaseQuantity(productName) {},
+// };
 
 // console.table(cart.getItems());
 
-cart.add({ name: "apple", price: 50 });
-cart.add({ name: "grape", price: 60 });
-cart.add({ name: "lemon", price: 60 });
-cart.add({ name: "strawberry", price: 110 });
-cart.add({ name: "pear", price: 30 });
-cart.remove("strawberry");
-console.log(cart.getItems());
+// cart.add({ name: "apple", price: 50 });
+// cart.add({ name: "grape", price: 60 });
+// cart.add({ name: "lemon", price: 60 });
+// cart.add({ name: "strawberry", price: 110 });
+// cart.add({ name: "pear", price: 30 });
+// cart.remove("strawberry");
+// console.log(cart.getItems());
 // cart.clear();
 // console.log(cart.countTotalPrice(cart.items));
 
@@ -162,3 +162,69 @@ console.log(cart.getItems());
 // };
 
 // console.log(coktails[0]);
+
+// const authors = {
+//   kiwi: 5,
+//   poly: 7,
+//   max: 10,
+//   jon: 2,
+// };
+
+// const fn = function (proms) {
+//   console.log(proms);
+// };
+
+// fn(authors);
+
+/* 
+Дополни код обновив значения свойств объекта apartment:
+
+цену в свойстве price на 5000;
+рейтинг квартиры в свойстве rating на 4.7;
+имя владельца во вложенном свойстве name на "Henry Sibola";
+массив тегов в свойстве tags добавив в конец строку "trusted".
+*/
+
+// const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+//   tags: ["premium", "promoted", "top"],
+//   owner: {
+//     name: "Henry",
+//     phone: "982-126-1588",
+//     email: "henry.carter@aptmail.com",
+//   },
+// };
+
+// // apartment.price = 5000;
+// // apartment.rating = 4.7;
+// // apartment.owner.name = "Henry Sibola";
+// // apartment.tags.push("trusted");
+
+// apartment.area = 60;
+// apartment.room = 3;
+// apartment.location = { country: "Jamaica", city: "Kingston" };
+
+// for (const key in apartment) {
+//   console.log(key, "-", apartment[key]);
+// }
+
+// // console.log(apartment);
+
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const keys = [];
+const values = [];
+
+for (const key in apartment) {
+  keys.push(key);
+  values.push(apartment[key]);
+}
+
+console.log(keys);
+console.log(values);
