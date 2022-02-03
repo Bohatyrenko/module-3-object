@@ -75,49 +75,60 @@
  * { name: 'strawberry', price: 110 }
  */
 
-// const cart = {
-//   items: [],
-//   getItems() {
-//     return this.items;
-//   },
-//   add(product) {
-//     this.items.push(product);
-//   },
-//   remove(productName) {
-//     for (const product of this.items) {
-//       if (product.name === productName) {
-//         const indexOfProduct = this.items.indexOf(product);
-//         this.items.splice(indexOfProduct, 1);
-//       }
-//     }
-//     this.getItems();
-//   },
-//   clear() {
-//     this.items = [];
-//   },
-//   countTotalPrice(allProducts) {
-//     let totalPrice = 0;
+const cart = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    const newProduct = {
+      ...product,
+      quantity: 1,
+    };
+    for (const item of this.items) {
+      console.log(item);
+    }
+    this.items.push(newProduct);
+  },
+  remove(productName) {
+    const { items } = this;
+    // const item = this.items[i];
+    for (let i = 0; i < items.length; i += 1) {
+      const { name } = items[i];
+      if (name === productName) {
+        items.splice(i, 1);
+      }
+    }
+    this.getItems();
+  },
+  clear() {
+    this.items = [];
+  },
+  countTotalPrice() {
+    const { items } = this;
+    let totalPrice = 0;
 
-//     for (const product of allProducts) {
-//       totalPrice += product.price;
-//     }
-//     return totalPrice;
-//   },
-//   increaseQuantity(productName) {},
-//   decreaseQuantity(productName) {},
-// };
+    for (const { price } of items) {
+      totalPrice += price;
+    }
+    return totalPrice;
+  },
+  increaseQuantity(productName) {},
+  decreaseQuantity(productName) {},
+};
 
 // console.table(cart.getItems());
 
-// cart.add({ name: "apple", price: 50 });
-// cart.add({ name: "grape", price: 60 });
-// cart.add({ name: "lemon", price: 60 });
-// cart.add({ name: "strawberry", price: 110 });
-// cart.add({ name: "pear", price: 30 });
-// cart.remove("strawberry");
-// console.log(cart.getItems());
+cart.add({ name: "apple", price: 50 });
+cart.add({ name: "grape", price: 60 });
+cart.add({ name: "lemon", price: 60 });
+cart.add({ name: "strawberry", price: 110 });
+cart.add({ name: "pear", price: 30 });
+cart.add({ name: "pear", price: 30 });
+// cart.remove("lemon");
+console.log(cart.getItems());
 // cart.clear();
-// console.log(cart.countTotalPrice(cart.items));
+console.log(cart.countTotalPrice());
 
 // console.log(cart.items);
 // console.log(cart.clear());
@@ -213,18 +224,18 @@
 
 // // console.log(apartment);
 
-const apartment = {
-  descr: "Spacious apartment in the city center",
-  rating: 4,
-  price: 2153,
-};
-const keys = [];
-const values = [];
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const keys = [];
+// const values = [];
 
-for (const key in apartment) {
-  keys.push(key);
-  values.push(apartment[key]);
-}
+// for (const key in apartment) {
+//   keys.push(key);
+//   values.push(apartment[key]);
+// }
 
-console.log(keys);
-console.log(values);
+// console.log(keys);
+// console.log(values);
