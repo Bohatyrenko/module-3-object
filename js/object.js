@@ -227,7 +227,9 @@ function getAllPropValues(propName) {
   const array = [];
 
   for (const product of products) {
-    array.push(product[propName]);
+    if (product[propName]) {
+      array.push(product[propName]);
+    }
   }
   return array;
 }
