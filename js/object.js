@@ -225,9 +225,6 @@ const products = [
 
 function getAllPropValues(propName) {
   const array = [];
-  // for (const el of products) {
-  //   console.log(Object.values(el.name));
-  // }
 
   for (const product of products) {
     array.push(product[propName]);
