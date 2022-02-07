@@ -216,25 +216,44 @@
 // console.log(getProductPrice("Engine"));
 // console.log(getProductPrice("Grip"));
 
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-function getAllPropValues(propName) {
-  const array = [];
+// function getAllPropValues(propName) {
+//   const array = [];
 
-  for (const product of products) {
-    if (product[propName]) {
-      array.push(product[propName]);
-    }
-  }
-  return array;
+//   for (const product of products) {
+//     if (product[propName]) {
+//       array.push(product[propName]);
+//     }
+//   }
+//   return array;
+// }
+
+// console.log(getAllPropValues("name"));
+// console.log(getAllPropValues("price"));
+// console.log(getAllPropValues("quantity"));
+// console.log(getAllPropValues("category"));
+
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  console.log(data);
 }
 
-console.log(getAllPropValues("name"));
-console.log(getAllPropValues("price"));
-console.log(getAllPropValues("quantity"));
-console.log(getAllPropValues("category"));
+console.log(makeTask({}));
+console.log(
+  makeTask({
+    category: "Homemade",
+    priority: "Low",
+    text: "Take out the trash",
+  })
+);
+console.log(makeTask({ category: "Finance", text: "Take interest" }));
+console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
+console.log(makeTask({ text: "Buy bread" }));
