@@ -313,22 +313,102 @@
 // console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
 // console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
 
-const bookShelf = {
-  // Change code below this line
-  books: ["The last kingdom", "The guardian of dreams"],
-  getBooks() {
-    return "Returning all books";
+// const bookShelf = {
+//   // Change code below this line
+//   books: ["The last kingdom", "The guardian of dreams"],
+//   getBooks() {
+//     return "Returning all books";
+//   },
+//   addBook(bookName) {
+//     return `Adding book ${bookName}`;
+//   },
+//   removeBook(bookName) {
+//     return `Deleting book ${bookName}`;
+//   },
+//   updateBook(oldName, newName) {
+//     return `Updating book ${oldName} to ${newName}`;
+//   },
+//   // Change code above this line
+// };
+
+// console.log(bookShelf.removeBook("Red sunset"));
+
+// const bookShelf = {
+//   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//   updateBook(oldName, newName) {
+//     const indexEl = this.books.indexOf(oldName);
+//     // this.books[indexEl] = newName;
+//     // console.log(this.books);
+//     this.books.slice(indexEl);
+//   },
+// };
+
+// console.log(bookShelf.updateBook("Haze", "Dungeon chronicles"));
+// console.log(bookShelf.updateBook("The last kingdom", "Dune"));
+
+// const potions = ["Speed potion", "Dragon breath", "Stone skin"];
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+//     const el = this.potions.indexOf(potionName);
+//     this.potions.splice(el, 1);
+//     return this.potions;
+//   },
+// };
+
+// console.log(atTheOldToad.removePotion("Dragon breath"));
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   updatePotionName(oldName, newName) {
+//     const indexEl = this.potions.indexOf(oldName);
+//     this.potions[indexEl] = newName;
+//     return this.potions;
+//   },
+// };
+
+// console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  getPotions() {
+    return this.potions;
   },
-  addBook(bookName) {
-    return `Adding book ${bookName}`;
+  addPotion(newPotion) {
+    for (const potion of this.potions) {
+      console.log(potion.name);
+      //   if (this.potions.name === newPotion) {
+      //     return `Error! Potion ${newPotion} is already in your inventory!`;
+      //   }
+
+      //   this.potions.push(newPotion);
+    }
   },
-  removeBook(bookName) {
-    return `Deleting book ${bookName}`;
+  removePotion(potionName) {
+    const potionIndex = this.potions.indexOf(potionName);
+
+    if (potionIndex === -1) {
+      return `Potion ${potionName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1);
   },
-  updateBook(oldName, newName) {
-    return `Updating book ${oldName} to ${newName}`;
+  updatePotionName(oldName, newName) {
+    const potionIndex = this.potions.indexOf(oldName);
+
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1, newName);
   },
   // Change code above this line
 };
 
-console.log(bookShelf.removeBook("Red sunset"));
+// console.log(atTheOldToad.getPotions());
+console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 }));
